@@ -1,3 +1,20 @@
+function updateLabels() {
+    const mode = document.getElementById("mode").value;
+    const keysLabel = document.getElementById("keysLabel");
+    const outputLabel = document.getElementById("outputLabel");
+    const generateBtn = document.getElementById("generateBtn");
+
+    if (mode === "decrypt") {
+        keysLabel.textContent = "Enter Keys to Decrypt:";
+        outputLabel.textContent = "Decrypted Text:";
+        generateBtn.style.display = "none"; // hide random keys button
+    } else {
+        keysLabel.textContent = "Keys:";
+        outputLabel.textContent = "Encrypted Text:";
+        generateBtn.style.display = "block"; // show random keys button
+    }
+}
+
 function generateKeys() {
     document.getElementById('key1').value = Math.floor(Math.random() * 25) + 1;
     document.getElementById('key2').value = Math.floor(Math.random() * 25) + 1;
