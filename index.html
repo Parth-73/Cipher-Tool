@@ -12,7 +12,7 @@
     <h2>Caesar Cipher Tool</h2>
 
     <label>Mode:</label>
-    <select id="mode">
+    <select id="mode" onchange="updateLabels()">
         <option value="encrypt">Encrypt</option>
         <option value="decrypt">Decrypt</option>
     </select>
@@ -20,19 +20,20 @@
     <label>Enter Text:</label>
     <textarea id="inputText" placeholder="Type your message..."></textarea>
 
-    <label>Keys:</label>
+    <label id="keysLabel">Keys:</label>
     <div class="keys">
         <input type="number" id="key1" placeholder="Key 1 (1-25)" min="1" max="25">
         <input type="number" id="key2" placeholder="Key 2 (1-25)" min="1" max="25">
     </div>
-    <button class="btn" type="button" onclick="generateKeys()">Generate Random Keys</button>
+    <button class="btn" type="button" id="generateBtn" onclick="generateKeys()">Generate Random Keys</button>
 
     <button class="btn" type="button" onclick="processCipher()">Run Cipher</button>
 
-    <label>Output:</label>
+    <label id="outputLabel">Output:</label>
     <div id="output" class="output"></div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
